@@ -23,6 +23,7 @@
           modules = [
             ./hosts/${host}/system
             ./hosts/${host}/users/${username}/user-setup.nix
+            ./hosts/${host}/hardware-configuration.nix
           ];
         };
       };
