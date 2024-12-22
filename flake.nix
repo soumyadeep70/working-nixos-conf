@@ -21,10 +21,10 @@
             inherit username;
           };
           modules = [
-            ./hosts/${host}/configuration.nix
+            ./hosts/${host}/system
+            ./hosts/${host}/users/${username}/user-setup.nix
           ];
         };
       };
     };
 }
-

@@ -15,7 +15,6 @@
       flavor = "mocha";
       font = "Noto Sans";
       fontSize = "10";
-      background = "${./background.jpg}";
       loginBackground = true;
     })
   ];
