@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = { nixpkgs, ... } @inputs:
+  outputs = { nixpkgs, home-manager, ... } @inputs:
     let
       host = "mercury";
       username = "cypher";
