@@ -16,28 +16,17 @@
     in
     {
       nixosConfigurations = {
-        "${host}" = nixpkgs.lib.nixosSystem {
+        ${host} = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
             inherit host;
+            inherit username;
           };
           modules = [
             ./hosts/${host}/system
-            ./hosts/${host}/users/${username}/user-setup.nix
+            ./hosts/${host}/users
             ./hosts/${host}/hardware-configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-                inherit host;
-                inherit username;
-              };
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.${username} = import ./hosts/${host}/users/${username};
-            }
           ];
         };
       };

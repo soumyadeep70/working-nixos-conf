@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ username, pkgs, ... }:
 
 {
-  users.users."cypher" = {
+  users.users.${username} = {
     homeMode = "755";
     isNormalUser = true;
     description = "Primary User";
@@ -17,10 +17,5 @@
       vscode
       nixd
     ];
-  };
-
-  programs.hyprland = {
-    enable =  true;
-    withUWSM = true;
   };
 }

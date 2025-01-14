@@ -18,6 +18,12 @@ let
 in
 {
   home.file.${envFile}.text = toEnvFormat {
+    NIXPKGS_ALLOW_UNFREE = 1;
+    NIXOS_OZONE_WL = 1;
+    
+  };
+
+  home.file.${env-hyprlandFile}.text = toEnvFormat {
     AMAZE = "hyprland";
     POOP = "sway";
     SIZE = 28;
