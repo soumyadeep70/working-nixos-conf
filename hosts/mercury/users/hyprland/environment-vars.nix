@@ -1,8 +1,8 @@
 { lib, ... }:
 
-let 
+let
   envFile = ".config/uwsm/env";
-  env-hyprlandFile = ".config/uwsm/env-hyprland";
+  envHyprlandFile = ".config/uwsm/env-hyprland";
   toEnvFormat = attrs:
     let
       mkEntry = key:
@@ -20,13 +20,12 @@ in
   home.file.${envFile}.text = toEnvFormat {
     NIXPKGS_ALLOW_UNFREE = 1;
     NIXOS_OZONE_WL = 1;
-    
+    GDK_BACKEND = "wayland,x11,*";
+    QT_QPA_PLATFORM = "wayland;xcb";
+    CLUTTER_BACKEND = "wayland";
   };
 
-  home.file.${env-hyprlandFile}.text = toEnvFormat {
-    AMAZE = "hyprland";
-    POOP = "sway";
-    SIZE = 28;
-    SCORE = 3.14;
+  home.file.${envHyprlandFile}.text = toEnvFormat {
+    
   };
 }
