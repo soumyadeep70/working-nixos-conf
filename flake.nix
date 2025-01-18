@@ -26,7 +26,7 @@
           modules = [
             ./hosts/${host}/system
             ./hosts/${host}/users
-            ./hosts/${host}/hardware-configuration.nix
+            /etc/nixos/hardware-configuration.nix
           ];
         };
       };
