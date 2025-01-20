@@ -26,6 +26,6 @@ in
   };
 
   home.file.${envHyprlandFile}.text = toEnvFormat {
-    
+    WLR_RENDERER_ALLOW_SOFTWARE = 1;
   };
 }
