@@ -5,8 +5,8 @@ let
   window = import ./window.nix;
   animation = import ./animation.nix;
   input = import ./input.nix;
-  keybindings = import ./keybindings.nix;
-  hyprland-conf = monitor // window // animation // input // keybindings;
+  keybinding = import ./keybinding.nix;
+  hyprland-conf = monitor // window // animation // input // keybinding;
 in
 {
   programs.hyprland = {
