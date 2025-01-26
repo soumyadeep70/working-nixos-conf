@@ -6,6 +6,7 @@ let
   animation = import ./animation.nix;
   input = import ./input.nix;
   keybinding = import ./keybinding.nix;
+  hyprland-conf = monitor // window // animation // input // keybinding;
 in
 {
   programs.hyprland = {
@@ -22,7 +23,7 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = false;
-      settings = monitor // window // animation // input // keybinding;
+      settings = hyprland-conf;
     };
   };
 }

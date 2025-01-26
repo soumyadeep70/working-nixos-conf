@@ -1,9 +1,17 @@
-{ ... }:
+{ inputs, system, host, ... }:
 
 {
   boot = {
     loader = {
-      systemd-boot.enable = true;
+      grub = {
+        enable = true;
+        devices = [ "nodev" ];
+        efiSupport = true;
+        configurationName = host;
+        useOSProber = true;
+        memtest86.enable = true;
+        copyKernels = true;
+      };
       efi.canTouchEfiVariables = true;
     };
     initrd = {
@@ -11,5 +19,14 @@
       systemd.enable = true;
     };
     plymouth.enable = true;
+  };
+
+  imports = [
+    inputs.distro-grub-themes.nixosModules.${system}.default
+  ];
+
+  distro-grub-themes = {
+    enable = true;
+    theme = "hp";
   };
 }
