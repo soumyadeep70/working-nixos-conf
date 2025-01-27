@@ -7,12 +7,13 @@
         enable = true;
         devices = [ "nodev" ];
         efiSupport = true;
+        efiInstallAsRemovable = true;
         configurationName = host;
         useOSProber = true;
         memtest86.enable = true;
         copyKernels = true;
       };
-      efi.canTouchEfiVariables = true;
+      efi.canTouchEfiVariables = false;
     };
     initrd = {
       enable = true;
