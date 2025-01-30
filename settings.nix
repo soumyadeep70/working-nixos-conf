@@ -1,0 +1,4 @@
+{
+  host = "mercury";
+  username = "cypher";
+}

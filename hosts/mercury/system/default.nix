@@ -2,12 +2,17 @@
 
 {
   imports = [
-    ./core
     ./nix
+    ./bootloader
+    ./kernel
+    ./drivers
+    ./hardware
+    ./network
     ./security
-    ./services
+    ./display-manager
+    ./virtualisation
+    ./user.nix
   ];
 
-  # Watch out!!
   system.stateVersion = "24.11";
 }

@@ -10,11 +10,10 @@
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
   };
 
-  outputs = { nixpkgs, home-manager, ... } @inputs:
+  outputs = { nixpkgs, ... } @inputs:
     let
       system = "x86_64-linux";
-      host = "mercury";
-      username = "cypher";
+      inherit (import ./settings.nix) host username;
     in
     {
       nixosConfigurations = {
@@ -24,7 +23,7 @@
           };
           modules = [
             ./hosts/${host}/system
-            ./hosts/${host}/users
+            ./hosts/${host}/home
             /etc/nixos/hardware-configuration.nix
           ];
         };

@@ -1,4 +1,4 @@
-{ username, pkgs, ... }:
+{ username, ... }:
 
 {
   users.users.${username} = {
@@ -11,11 +11,6 @@
       "libvirtd"
       "scanner"
       "lp"
-    ];
-    packages = with pkgs; [
-      kitty
-      vscode
-      nixd
     ];
   };
 }

@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./user.nix
     ./hyprland
+    ./terminal
     inputs.home-manager.nixosModules.home-manager
   ];
 
