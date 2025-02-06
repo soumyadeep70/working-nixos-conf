@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./nautilus.nix
+    ./thunar.nix
   ];
 }
