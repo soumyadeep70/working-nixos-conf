@@ -14,7 +14,7 @@
     ];
     extraPackages32 = with pkgs.pkgsi686Linux; [
       intel-media-driver
-      (intel-vaapi-driver { enableHybridCodec = true; })
+      (intel-vaapi-driver.override { enableHybridCodec = true; })
       vaapiVdpau
       mesa
       libvdpau-va-gl

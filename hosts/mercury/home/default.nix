@@ -4,6 +4,7 @@
   imports = [
     ./hyprland
     ./terminal
+    ./file-manager
     inputs.home-manager.nixosModules.home-manager
   ];
 

@@ -1,8 +1,11 @@
-{ ... }:
+{ username, ... }:
 
 {
-  programs.kitty = {
-    enable = true;
-    themeFile = "tokyo_night_night";
+  home-manager.users.${username} = { ... }:
+  {
+    programs.kitty = {
+      enable = true;
+      themeFile = "tokyo_night_night";
+    };
   };
 }
