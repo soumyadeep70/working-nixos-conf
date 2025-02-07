@@ -1,12 +1,11 @@
 { username, ... }:
 
 let
-  monitor = import ./monitor.nix;
   window = import ./window.nix;
   animation = import ./animation.nix;
   input = import ./input.nix;
   keybinding = import ./keybinding.nix;
-  hyprland-config = monitor // window // animation // input // keybinding;
+  hyprland-config = window // animation // input // keybinding;
 in
 {
   programs.hyprland = {
@@ -18,6 +17,7 @@ in
 
     imports = [
       ./environment-vars.nix
+      ../modules/monitor.nix
     ];
 
     wayland.windowManager.hyprland = {
