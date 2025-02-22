@@ -12,8 +12,7 @@
 
   outputs = { nixpkgs, ... } @inputs:
     let
-      system = "x86_64-linux";
-      inherit (import ./settings.nix) host username;
+      inherit (import ./settings.nix) system host username;
     in
     {
       nixosConfigurations = {
@@ -22,8 +21,8 @@
             inherit inputs system host username;
           };
           modules = [
-            ./hosts/${host}/system
-            ./hosts/${host}/home
+            ./system
+            ./home
             /etc/nixos/hardware-configuration.nix
           ];
         };

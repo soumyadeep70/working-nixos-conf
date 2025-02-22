@@ -1,0 +1,5 @@
+export NIXPKGS_ALLOW_UNFREE=1
+export NIXOS_OZONE_WL=1
+export GDK_BACKEND=wayland,x11,*
+export QT_QPA_PLATFORM=wayland;xcb
+export CLUTTER_BACKEND=wayland
